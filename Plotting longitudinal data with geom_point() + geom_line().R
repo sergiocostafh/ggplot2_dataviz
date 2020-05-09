@@ -21,4 +21,5 @@ ggplot(data,aes(x=age,y=circumference,linetype=Tree,shape=Tree))+
        caption=expression(paste(italic(Orange),
                                 ' dataset from the ',
                                 italic(datasets),
-                                ' package')))
+                                ' package')))+
+  cowplot::theme_cowplot()
