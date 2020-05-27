@@ -22,7 +22,7 @@ ggplot(data)+
   coord_flip()+
   scale_fill_manual(name='',values=c('darkred','steelblue'))+
   scale_y_continuous(breaks=seq(-10,10,1),
-                     labels=function(x){paste(x,'%')})+
+                     labels=function(x){paste(abs(x),'%')})+
   labs(x='',y='Population (%)',
        title='Population Pyramid of Brazil',
        subtitle=paste('Total resident population in 2019:', format(sum(data$Population),big.mark='.')),
