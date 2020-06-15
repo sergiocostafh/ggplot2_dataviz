@@ -7,7 +7,7 @@ data <- read.csv(url)
 head(data)
 # Manipulating data
 data <- data%>%
-  gather('Gender','Population',2:3)%>%
+  pivot_longer(names_to = 'Gender', values_to = 'Population', cols = 2:3) %>%
   mutate(PopPerc=case_when(Gender=='M'~round(Population/sum(Population)*100,2),
                            TRUE~-round(Population/sum(Population)*100,2)),
          signal=case_when(Gender=='M'~1,
